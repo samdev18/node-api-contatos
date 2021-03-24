@@ -1,0 +1,67 @@
+components:
+  schemas:
+    Contato:
+      required:
+        - nome
+        - telefone
+        - titulo
+        - data_nascimento
+      properties:
+        nome:
+          type: string
+        telefone:
+          type: string
+        titulo:
+          type: string
+        data_nascimento:
+          type: string
+      example:
+        nome: teste
+        telefone: "44997079831" 
+        titulo: titulo1
+        data_nascimento: "2021-03-24 22:30:25"
+paths:
+  /contatos:
+    get:
+      description: "Listar Contatos"
+      responses:
+        200:
+          description: "Success"
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Contato'
+      description: "Use para inserir um contato"
+      responses:
+        200:
+          description: "Success"
+
+         
+  /contatos/{id}:
+    get:
+      description: "Use para listar contatos por ID"
+      parameters:
+        - in: path
+          name: id
+          type: integer
+          description: "ID do contato"
+      responses:
+        200:
+          description: Success
+    put:
+      parameters:
+        - in: path
+          name: id
+          type: integer
+          description: "ID do contato"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Contato'
+      description: "Use para inserir um contato"
+      responses:
+        200:
+          description: "Success"
