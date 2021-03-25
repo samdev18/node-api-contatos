@@ -65,3 +65,13 @@ paths:
       responses:
         200:
           description: "Success"
+    delete:
+      parameters:
+        - in: path
+          name: id
+          type: integer
+          description: "ID do contato"
+      description: "Use para inserir um contato"
+      responses:
+        200:
+          description: "Success"

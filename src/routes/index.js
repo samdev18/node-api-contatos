@@ -6,6 +6,7 @@ const router = express.Router();
 
 module.exports = router
     .get('/contatos', ContatoController.get)
-    .get('/contatos/:id', ContatoController.getById)
     .post('/contatos', ContatoController.post)
+    .get('/contatos/:id', ContatoController.getById)
     .put('/contatos/:id', ContatoController.put)
+    .delete('/contatos/:id', ContatoController.delete)

@@ -41,8 +41,13 @@ class ContatoController {
     static async delete(req, res) {
         const { id } = req.params
         try {
-            await database.Contatos.destroy({ where: { id: Number(id) } })
-            return res.status(200).json({ message: `id ${id} deletado` })
+            const contato = await database.Contatos.findOne({ where: { id: Number(id) } })
+            if (contato) {
+                await database.Contatos.destroy({ where: { id: Number(id) } })
+                return res.status(200).json({ message: `id ${id} deletado` })
+            } else {
+                return res.status(404).json({ message: `id ${id} não encontrado` })
+            }
         } catch (error) {
             return res.status(500).json(error.message)
         }
