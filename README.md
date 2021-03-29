@@ -21,4 +21,4 @@
     - execute migrations using "npx sequelize-cli db:migrate" command
     - execute the seeds using the "npx sequelize-cli db:seed:all" command
     - execute the server using "npm start" command
-    - acess /docs endpoint and test the api using swagger
+    - access /docs endpoint and test the api using swagger
