@@ -1,4 +1,4 @@
-#   API de contatos
+#   Contacts API
 
 #   Idea:
     - Just an API to create and manipulate a contact List
